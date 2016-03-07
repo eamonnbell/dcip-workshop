@@ -1,6 +1,15 @@
-void setup() {
+// Processing sketches need two core functions
+// 1. setup()
+// 2. draw()
+//
+// The keyword `void` indicates that the function does not provide a result 
+// its caller.
+//
+// The setup() function is called once, when the sketch is run. 
+// The draw() function is called on every frame render. 
 
-  size(640, 480);
+void setup() {
+  size(640, 480, P2D);
   background(255);
 }
 
@@ -15,8 +24,6 @@ void draw() {
     int top_y = 100 + (i * 5);
     int bottom_x = top_x + 15;
     int bottom_y = top_y + 15;
-
-    
     rect(top_x, top_y, bottom_x, bottom_y);
   }
 }

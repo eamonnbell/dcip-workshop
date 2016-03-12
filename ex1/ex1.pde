@@ -14,7 +14,7 @@ void setup() {
 }
 
 void draw() {
-  fill(10);
+  fill(0, 255, 0);
   rect(10, 10, 50, 50);
   fill(#ee0000);
   rect(width - 30, height - 30, width, height);
@@ -26,5 +26,18 @@ void draw() {
     int bottom_y = top_y + 15;
     rect(top_x, top_y, bottom_x, bottom_y);
   }
+}
+
+void mouseDragged() {
+  int radius; 
+  int factor;
+  
+  int factor_max = width * height;
+  factor = mouseX * mouseY;
+ 
+  radius = int(map(factor, 0, factor_max, 5, 50));
+  
+  fill(0, 0, 255, 100);
+  ellipse(mouseX, mouseY, radius, radius);
 }
 

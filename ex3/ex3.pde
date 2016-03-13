@@ -9,7 +9,7 @@ void draw() {
   background(10);
 
   translate(width/2, height/2, 0);
-  rotateZ(radians(mouseY));
+  // rotateZ(radians(mouseY));
 
 
   for (int i = 0; i < 6; i++) {

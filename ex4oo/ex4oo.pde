@@ -35,15 +35,17 @@ void draw() {
 
 class Box {
   PVector location;
+  PVector size;
 
   Box(PVector location_) {
     location = location_;
+    size = new PVector(15, 15, 15);
   }
 
   void display() {
     pushMatrix();
     translate(location.x, location.y, location.z);
-    box(10, 10, 10);
+    box(size.x, size.y, size.z);
     popMatrix();
   }
 }

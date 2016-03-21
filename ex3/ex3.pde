@@ -15,6 +15,8 @@ void setup() {
 void draw() {
   fill(200);
   background(10);
+  lights();
+
 
   for (int i = 0; i < 6; i++) {
     translate(30, 0);

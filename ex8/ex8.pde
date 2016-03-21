@@ -43,6 +43,7 @@ void draw() {
   fill(200);
   background(10);
   translate(0, 0, 0);
+  lights();
   
   for (Box b : boxes) {
     b.display();

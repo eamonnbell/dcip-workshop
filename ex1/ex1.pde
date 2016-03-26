@@ -1,24 +1,17 @@
-// Processing sketches need two core functions
-// 1. setup()
-// 2. draw()
-//
-// The keyword `void` indicates that the function does not provide a result 
-// its caller.
-//
-// The setup() function is called once, when the sketch is run. 
-// The draw() function is called on every frame render. 
-
 void setup() {
   size(640, 480, P2D);
-  background(255);
+  background(255, 255, 255);
 }
 
 void draw() {
   fill(0, 255, 0);
   rect(10, 10, 50, 50);
-  fill(#ee0000);
-  rect(width - 30, height - 30, width, height);
 
+  fill(200, 0, 0);
+  rectMode(CORNER);
+  rect(width - 50, height - 50, width, height);
+
+  // for loop syntax for smartypants
   for (int i = 0; i < 25; i++) {
     int top_x = 100 + (i * 5);
     int top_y = 100 + (i * 5);
@@ -32,9 +25,9 @@ void mouseDragged() {
   int radius; 
   int factor;
   
+  // map() for smartypants
   int factor_max = width * height;
   factor = mouseX * mouseY;
- 
   radius = int(map(factor, 0, factor_max, 5, 50));
   
   fill(0, 0, 255, 100);

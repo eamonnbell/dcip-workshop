@@ -1,7 +1,7 @@
 import peasy.*;
 
 PeasyCam cam;
-int n = 3;
+int n = 9;
 
 void setup() {
   size(640, 480, OPENGL);

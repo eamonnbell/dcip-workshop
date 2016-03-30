@@ -8,8 +8,7 @@ void draw() {
   rect(10, 10, 50, 50);
 
   fill(200, 0, 0);
-  rectMode(CORNER);
-  rect(width - 50, height - 50, width, height);
+  rect(640 - 50, 480 - 50, 640, 480);
 
   // for loop syntax for smartypants
   for (int i = 0; i < 25; i++) {
@@ -24,9 +23,8 @@ void draw() {
 void mouseDragged() {
   int radius; 
   int factor;
-  
-  // map() for smartypants
   int factor_max = width * height;
+  
   factor = mouseX * mouseY;
   radius = int(map(factor, 0, factor_max, 5, 50));
   

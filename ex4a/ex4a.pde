@@ -3,7 +3,7 @@ import peasy.*;
 ArrayList<Box> boxes = new ArrayList<Box>();
 
 PeasyCam cam;
-int n = 3;
+int n = 9;
 
 void setup() {
   size(640, 480, OPENGL);
@@ -17,7 +17,9 @@ void setup() {
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < n; j++) {
       for (int k = 0; k < n; k++) {
-        boxes.add(new Box(new PVector(i * 20, j * 20, k * 20)));
+        PVector location = new PVector(i * 20, j * 20, k * 20);
+        Box b = new Box(location);
+        boxes.add(b);
       }
     }
   }

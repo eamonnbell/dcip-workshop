@@ -33,11 +33,11 @@ void drawboxes() {
       pushMatrix();
       for (int k = 0; k < n; k++) {
         
-//        float r = map(i, 0, n, 0, 255);
-//        float g = map(j, 0, n, 0, 255);
-//        float b = map(k, 0, n, 0, 255);
-//        
-//        fill(r, g, b);
+          float r = map(i, 0, n, 0, 255);
+          float g = map(j, 0, n, 0, 255);
+          float b = map(k, 0, n, 0, 255);
+          
+          fill(r, g, b);
         
         translate(0, 0, 20);
         box(15, 15, 15);

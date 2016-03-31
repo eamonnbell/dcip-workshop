@@ -1,45 +1,50 @@
 import peasy.*;
 
-ArrayList<Box> boxes = new ArrayList<Box>();
-
-Table t;
+ArrayList<DisplayPrimitive> display_primitives = new ArrayList<DisplayPrimitive>();
 
 PeasyCam cam;
-int n = 3;
+int n = 9;
+
+Table t;
 
 void setup() {
   size(640, 480, OPENGL);
   background(10);
+  lights();
 
   cam = new PeasyCam(this, 500);
   cam.setMinimumDistance(50);
   cam.setMaximumDistance(500);
-  
+
   t = loadTable("data/data.csv", "header");
   
   for (TableRow row : t.rows()) {
     PVector random_location = PVector.random3D();
     random_location.mult(100);
     Box b = new Box(random_location);
-    boxes.add(b);
-  }      
+    display_primitives.add(b);
+  } 
 }
 
 void draw() {
   fill(200);
   background(10);
-  lights();
   translate(0, 0, 0);
+  lights();
   
-  for (Box b : boxes) {
-    b.display();
+  for (DisplayPrimitive dp : display_primitives) {
+    dp.display();
   }
 }
 
-class Box {
+interface DisplayPrimitive {
+  void display();
+}
+
+class Box implements DisplayPrimitive {
   PVector location;
   PVector size;
-
+  
   Box(PVector location_) {
     location = location_;
     size = new PVector(15, 15, 15);
@@ -53,3 +58,19 @@ class Box {
   }
 }
 
+class Blob implements DisplayPrimitive {
+  PVector location;
+  int size;
+  
+  Blob(PVector location_) {
+    location = location_;
+    size = 15;
+  }
+
+  void display() {
+    pushMatrix();
+    translate(location.x, location.y, location.z);
+    sphere(size);
+    popMatrix();
+  }
+}

@@ -19,7 +19,8 @@ void setup() {
       for (int k = 0; k < n; k++) {
         PVector location = new PVector(i * 20, j * 20, k * 20);
         Box b = new Box(location);
-        boxes.add(b);
+        
+        boxes.add(b);       
       }
     }
   }
@@ -29,6 +30,7 @@ void draw() {
   fill(200);
   background(10);
   translate(0, 0, 0);
+  lights();
   
   for (Box b : boxes) {
     b.display();
@@ -38,7 +40,7 @@ void draw() {
 class Box {
   PVector location;
   PVector size;
-
+  
   Box(PVector location_) {
     location = location_;
     size = new PVector(15, 15, 15);
@@ -48,6 +50,23 @@ class Box {
     pushMatrix();
     translate(location.x, location.y, location.z);
     box(size.x, size.y, size.z);
+    popMatrix();
+  }
+}
+
+class Blob {
+  PVector location;
+  int size;
+  
+  Blob(PVector location_) {
+    location = location_;
+    size = 15;
+  }
+
+  void display() {
+    pushMatrix();
+    translate(location.x, location.y, location.z);
+    sphere(size);
     popMatrix();
   }
 }

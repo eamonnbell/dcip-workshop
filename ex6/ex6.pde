@@ -1,8 +1,8 @@
-Table t;
-
 import peasy.*;
 
 ArrayList<Box> boxes = new ArrayList<Box>();
+
+Table t;
 
 PeasyCam cam;
 int n = 3;
@@ -20,8 +20,8 @@ void setup() {
   for (TableRow row : t.rows()) {
     PVector random_location = PVector.random3D();
     random_location.mult(100);
-    
-    boxes.add(new Box(random_location));
+    Box b = new Box(random_location);
+    boxes.add(b);
   }      
 }
 

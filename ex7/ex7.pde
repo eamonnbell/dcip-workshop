@@ -24,6 +24,7 @@ void setup() {
     
     int amount = row.getInt("amount");
     PVector size = new PVector(amount, amount, amount);
+
     Box b = new Box(random_location, size);
     display_primitives.add(b);
   } 

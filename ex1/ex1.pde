@@ -9,8 +9,13 @@ void draw() {
 
   fill(200, 0, 0);
   rect(640 - 50, 480 - 50, 640, 480);
+  
+  fill(0, 0, 0);
+  textSize(32);
+  text("Hello again", width-300, 30); 
 
-  // for loop syntax for smartypants
+  fill(255, 0, 0);
+
   for (int i = 0; i < 25; i++) {
     int top_x = 100 + (i * 5);
     int top_y = 100 + (i * 5);

@@ -5,7 +5,6 @@ ArrayList<PVector> user_locations = new ArrayList<PVector>();
 ArrayList<String> usernames = new ArrayList<String>();
 
 PeasyCam cam;
-int n = 9;
 
 Table t;
 
@@ -64,6 +63,10 @@ void load_data() {
     t = loadTable("data/users.csv", "header");
 
     PVector user_location = user_locations.get(u_i);
+    PVector label_offset = new PVector(65, 0, 0);
+    
+    TextLabel tl = new TextLabel(PVector.add(user_location, label_offset), username);
+    display_primitives.add(tl);
 
     for (TableRow r : t.rows ()) {
 
@@ -72,7 +75,7 @@ void load_data() {
 
       PVector computed_location = PVector.add(user_location, random_offset);
 
-      color fill = #00ff00;
+      color fill = #4099FF;
       int size = 5;
 
       Blob blob = new Blob(computed_location, size, fill);
@@ -145,6 +148,23 @@ class Blob implements DisplayPrimitive {
     translate(location.x, location.y, location.z);
     fill(fill);
     sphere(size);
+    popMatrix();
+  }
+}
+
+class TextLabel implements DisplayPrimitive {
+  String label;
+  PVector location;
+  
+  TextLabel(PVector location_, String label_) {
+    location = location_;
+    label = label_;
+  }
+  
+  void display() {
+    pushMatrix();
+    fill(#ffffff);
+    text(label, location.x, location.y, location.z);
     popMatrix();
   }
 }

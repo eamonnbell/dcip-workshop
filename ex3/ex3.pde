@@ -17,9 +17,7 @@ void draw() {
 
   for (int i = 0; i < 6; i++) {
     translate(30, 0, 0);
-//    pushMatrix();
     box(25, 25, 25);
-//    popMatrix();
   }
 }
 

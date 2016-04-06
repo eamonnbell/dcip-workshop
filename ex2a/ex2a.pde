@@ -15,7 +15,8 @@ void setup() {
 void draw() {
   background(10);
   lights();
-
+  
+  // Exercise: Change this
   translate(width/2, height/2, 0);
 
   rotateX(10);

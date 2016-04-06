@@ -3,7 +3,6 @@ import peasy.*;
 ArrayList<DisplayPrimitive> display_primitives = new ArrayList<DisplayPrimitive>();
 
 PeasyCam cam;
-int n = 9;
 
 Table t;
 

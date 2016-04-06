@@ -68,7 +68,7 @@ void load_data() {
     for (TableRow r : t.rows ()) {
 
       PVector random_offset = PVector.random3D();
-      random_offset.mult(45);
+      random_offset.mult(65);
 
       PVector computed_location = PVector.add(user_location, random_offset);
 
